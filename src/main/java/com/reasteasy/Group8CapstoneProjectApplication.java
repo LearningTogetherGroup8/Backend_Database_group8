@@ -8,6 +8,6 @@ public class Group8CapstoneProjectApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(Group8CapstoneProjectApplication.class, args);
-	System.out.println("Application backend Started");
+	
 	}
 }

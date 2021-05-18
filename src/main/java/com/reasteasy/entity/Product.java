@@ -20,20 +20,20 @@ public class Product {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "Product_Id")
 	private int productId;
-	
+
 	@Column(name="Resturant_Name")
 	private String resturantName;
-	
+
 	@Column(name = "Price")
 	private String price;
-	
+
 	@Column(name ="Image_Url")
 	private String imageUrl;
-	
+
 
 	@Column(name ="Product_Name")
 	private String productName;
-	
-	
+
+
 
 }

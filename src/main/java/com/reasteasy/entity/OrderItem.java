@@ -24,14 +24,14 @@ public class OrderItem {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "Order_Item_Id")
 	private int orderItemId;
-	
+
 	@Column(name = "Quantity")
 	private double quantity;
-	
+
 	@OneToOne(cascade=CascadeType.ALL)
 	@JoinColumn(name ="Product_Id")
 	private Product product;
-	
+
 	@OneToOne(cascade=CascadeType.ALL)
 	@JoinColumn(name ="Order_Id")
 	private Orders orders;

@@ -19,25 +19,25 @@ import lombok.NoArgsConstructor;
 @Entity
 @Table(name="Orders")
 public class Orders {
-	
-		@Id
-		@GeneratedValue(strategy = GenerationType.IDENTITY)
-		@Column(name = "Order_Id")
-		private int orderId;
-		
-		@Column(name="Total_Quantity")
-		private int totalQuantity;
-		
-		@Column(name = "Total_Price")
-		private double totalPrice;
-		
-		@OneToOne(cascade=CascadeType.ALL)
-		@JoinColumn(name ="Order_Customer_Id")
-		private OrderCustomer orderCustomer;
-		
-		@OneToOne(cascade=CascadeType.ALL)
-		@JoinColumn(name ="Address_Id")
-		private Address address;
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "Order_Id")
+	private int orderId;
+
+	@Column(name="Total_Quantity")
+	private int totalQuantity;
+
+	@Column(name = "Total_Price")
+	private double totalPrice;
+
+	@OneToOne(cascade=CascadeType.ALL)
+	@JoinColumn(name ="Order_Customer_Id")
+	private OrderCustomer orderCustomer;
+
+	@OneToOne(cascade=CascadeType.ALL)
+	@JoinColumn(name ="Address_Id")
+	private Address address;
 
 
 

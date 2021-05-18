@@ -33,63 +33,89 @@ public class CheckoutServiceImpl implements CheckoutService{
 	OrderItemRepository orderItemRepository;
 	@Autowired
 	OrderCustomerRepository orderCustomerRepository;
+	
+	//get all customer from customer table
 	@Override
 	public List<Customer> findAllCustomer() {
 		return customerRepository.findAll();
 	}
+	
+	//save customer to customer table
 	@Override
 	public Customer saveCustomer(Customer customer) {
 		return customerRepository.saveAndFlush(customer);
 	}
+	
+	//get emailId of customer from customer table for validation
 	@Override
 	public List<Customer> findByEmail(String theEmail) {
 		return customerRepository.findAll().stream().filter(x->x.getEmail().equalsIgnoreCase(theEmail)).collect(Collectors.toList());
 	}
+	
+	//get all products from product table
 	@Override
 	public List<Product> findAllProduct() {
 		
 		return productRepository.findAll();
 	}
+	
+	//save product to product table
 	@Override
 	public Product saveProduct(Product theProduct) {
 		
 		return productRepository.saveAndFlush(theProduct);
 	}
+	
+	//get address from address table
 	@Override
 	public List<Address> findAllAddress() {
 	
 		return addressRepository.findAll();
 	}
+	
+	//save address to address table
 	@Override
 	public Address saveAddress(Address theAddress) {
 		
 		return addressRepository.saveAndFlush(theAddress);
 	}
+	
+	//get all orders placed by customer from order table
 	@Override
 	public List<OrderCustomer> findAllOrderCustomer() {
 		
 		return orderCustomerRepository.findAll();
 	}
+	
+	//save orders of customer to order table
 	@Override
 	public OrderCustomer saveOrderCustomer(OrderCustomer theorderCustomer) {
 		
 		return orderCustomerRepository.saveAndFlush(theorderCustomer);
 	}
+	
+	//get all orders from order table
 	@Override
 	public List<Orders> findAllOrders() {
 		
 		return ordersRepository.findAll();
 	}
+	
+	//save orders to order table
 	@Override
 	public Orders saveOrders(Orders theorders) {
 		
 		return ordersRepository.saveAndFlush(theorders);
 	}
+	
+	//get all order placed by customer from orderItem table
 	@Override
 	public List<OrderItem> findAllOrderItem() {
 		
 		return orderItemRepository.findAll();
 	}
+	
+	//save order item placed by customer to orderItem table
 	@Override
 	public OrderItem saveOrderItem(OrderItem theorderItem) {
 		

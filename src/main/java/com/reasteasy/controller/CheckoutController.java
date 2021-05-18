@@ -1,7 +1,6 @@
 package com.reasteasy.controller;
 
 import java.util.List;
-import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -83,7 +82,7 @@ public class CheckoutController {
 
 	@GetMapping("/orders")
 	public List<Orders> findAllOrders(){
-	
+
 		return checkoutService.findAllOrders();
 	}
 
@@ -91,8 +90,8 @@ public class CheckoutController {
 	public Orders saveOrders(@RequestBody Orders theOrders) {
 		checkoutService.saveOrders(theOrders);
 		return theOrders;
-    }
-	
+	}
+
 
 	@GetMapping("/orderItem")
 	public List<OrderItem> findAllOrderItem(){
@@ -103,5 +102,5 @@ public class CheckoutController {
 	public OrderItem saveOrderItem(@RequestBody OrderItem theOrderItem) {
 		checkoutService.saveOrderItem(theOrderItem);
 		return theOrderItem;
-		}
 	}
+}
